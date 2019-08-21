@@ -155,7 +155,6 @@ static bool_t push_registry_table( lua_State* L, UniqueKey key, bool_t create)
 {
 	STACK_GROW( L, 3);
 	STACK_CHECK( L, 0);
-
 	REGISTRY_GET( L, key);                                                       // ?
 	if( lua_isnil( L, -1))                                                       // nil?
 	{
@@ -165,7 +164,6 @@ static bool_t push_registry_table( lua_State* L, UniqueKey key, bool_t create)
 		{
 			return FALSE;
 		}
-
 		lua_newtable( L);                                                          // t
 		REGISTRY_SET( L, key, lua_pushvalue( L, -2));
 	}
